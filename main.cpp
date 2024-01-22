@@ -38,11 +38,6 @@ public:
     }
 
     static ComplexNumber division (ComplexNumber dividend, ComplexNumber divisor) {
-        dividend.re = (double)dividend.re;
-        dividend.im = (double)dividend.im;
-        divisor.re = (double)divisor.re;
-        divisor.im = (double)divisor.im;
-
         return ComplexNumber(
             (dividend.re * divisor.re + dividend.im * divisor.im) / (pow(divisor.re, 2) + pow(divisor.im, 2)),
             (divisor.re * dividend.im - dividend.re * divisor.im) / (pow(divisor.re, 2) + pow(divisor.im, 2))
@@ -96,8 +91,6 @@ public:
 
 int main() {
     ComplexNumber test(2, 5);
-    test.setRe(2);
-    test.setIm(5);
     std::cout << "getRe: " << test.getRe() << std::endl;
     std::cout << "getIm: " << test.getIm() << std::endl;
 
